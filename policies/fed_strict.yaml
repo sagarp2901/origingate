@@ -1,0 +1,11 @@
+name: fed_strict
+description: "Strict procurement gate: deny foreign-dominant and require strong OCS."
+thresholds:
+  tau_min_ocs: 0.75
+  gamma_max_foi: 20.0
+actions:
+  on_allow: ["log_audit", "approve"]
+  on_review: ["log_audit", "manual_review"]
+  on_deny: ["log_audit", "deny"]
+fee:
+  enabled: false

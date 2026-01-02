@@ -1,0 +1,871 @@
+{
+  "product": {
+    "name": "AcmeAnalytics",
+    "version": "4.2.0"
+  },
+  "artifact": {
+    "digest": "sha256:b01fb50a111276da3cc35ce7598eaca2a05f7aa16c1db710237cb9a6a1bc1077",
+    "uri": "oci://registry.example/AcmeAnalytics:4.2.0"
+  },
+  "provenance": {
+    "builder_id": "github-actions://example",
+    "build_region": "us-east-1",
+    "timestamp": "2026-01-01T20:05:48.613169Z",
+    "source_repo": "https://git.example/org/repo",
+    "commit": "2cbc9715"
+  },
+  "sbom": {
+    "format": "cyclonedx-lite",
+    "components": [
+      {
+        "name": "lib0",
+        "version": "2.20.8",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.125
+      },
+      {
+        "name": "lib1",
+        "version": "4.2.49",
+        "supplier_jurisdiction": "CN",
+        "criticality": "auth",
+        "foreign_control_risk": 0.78
+      },
+      {
+        "name": "lib2",
+        "version": "5.7.43",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.063
+      },
+      {
+        "name": "lib3",
+        "version": "4.0.20",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.0
+      },
+      {
+        "name": "lib4",
+        "version": "1.18.15",
+        "supplier_jurisdiction": "IN",
+        "criticality": "network",
+        "foreign_control_risk": 0.867
+      },
+      {
+        "name": "lib5",
+        "version": "5.1.43",
+        "supplier_jurisdiction": "SG",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.958
+      },
+      {
+        "name": "lib6",
+        "version": "1.19.34",
+        "supplier_jurisdiction": "US",
+        "criticality": "ui",
+        "foreign_control_risk": 0.012
+      },
+      {
+        "name": "lib7",
+        "version": "5.16.25",
+        "supplier_jurisdiction": "BR",
+        "criticality": "data",
+        "foreign_control_risk": 0.594
+      },
+      {
+        "name": "lib8",
+        "version": "5.19.3",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.206
+      },
+      {
+        "name": "lib9",
+        "version": "2.18.9",
+        "supplier_jurisdiction": "EU",
+        "criticality": "data",
+        "foreign_control_risk": 0.546
+      },
+      {
+        "name": "lib10",
+        "version": "2.8.10",
+        "supplier_jurisdiction": "SG",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.919
+      },
+      {
+        "name": "lib11",
+        "version": "1.5.46",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.123
+      },
+      {
+        "name": "lib12",
+        "version": "3.15.24",
+        "supplier_jurisdiction": "EU",
+        "criticality": "network",
+        "foreign_control_risk": 0.487
+      },
+      {
+        "name": "lib13",
+        "version": "3.13.26",
+        "supplier_jurisdiction": "IN",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.958
+      },
+      {
+        "name": "lib14",
+        "version": "4.19.31",
+        "supplier_jurisdiction": "US",
+        "criticality": "network",
+        "foreign_control_risk": 0.053
+      },
+      {
+        "name": "lib15",
+        "version": "3.2.38",
+        "supplier_jurisdiction": "SG",
+        "criticality": "auth",
+        "foreign_control_risk": 0.674
+      },
+      {
+        "name": "lib16",
+        "version": "3.6.19",
+        "supplier_jurisdiction": "IN",
+        "criticality": "data",
+        "foreign_control_risk": 0.564
+      },
+      {
+        "name": "lib17",
+        "version": "4.8.9",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.939
+      },
+      {
+        "name": "lib18",
+        "version": "1.7.45",
+        "supplier_jurisdiction": "CA",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.921
+      },
+      {
+        "name": "lib19",
+        "version": "1.6.39",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.172
+      },
+      {
+        "name": "lib20",
+        "version": "1.16.37",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.719
+      },
+      {
+        "name": "lib21",
+        "version": "5.19.35",
+        "supplier_jurisdiction": "SG",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.761
+      },
+      {
+        "name": "lib22",
+        "version": "1.12.11",
+        "supplier_jurisdiction": "CN",
+        "criticality": "ui",
+        "foreign_control_risk": 0.342
+      },
+      {
+        "name": "lib23",
+        "version": "2.3.32",
+        "supplier_jurisdiction": "US",
+        "criticality": "other",
+        "foreign_control_risk": 0.106
+      },
+      {
+        "name": "lib24",
+        "version": "2.2.25",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.0
+      },
+      {
+        "name": "lib25",
+        "version": "0.8.20",
+        "supplier_jurisdiction": "SG",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.856
+      },
+      {
+        "name": "lib26",
+        "version": "1.16.49",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.058
+      },
+      {
+        "name": "lib27",
+        "version": "5.11.29",
+        "supplier_jurisdiction": "EU",
+        "criticality": "data",
+        "foreign_control_risk": 0.553
+      },
+      {
+        "name": "lib28",
+        "version": "5.14.31",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.16
+      },
+      {
+        "name": "lib29",
+        "version": "0.12.8",
+        "supplier_jurisdiction": "IN",
+        "criticality": "crypto",
+        "foreign_control_risk": 1.0
+      },
+      {
+        "name": "lib30",
+        "version": "2.9.50",
+        "supplier_jurisdiction": "SG",
+        "criticality": "data",
+        "foreign_control_risk": 0.637
+      },
+      {
+        "name": "lib31",
+        "version": "1.12.14",
+        "supplier_jurisdiction": "BR",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.989
+      },
+      {
+        "name": "lib32",
+        "version": "3.15.30",
+        "supplier_jurisdiction": "IN",
+        "criticality": "network",
+        "foreign_control_risk": 0.527
+      },
+      {
+        "name": "lib33",
+        "version": "1.19.25",
+        "supplier_jurisdiction": "US",
+        "criticality": "network",
+        "foreign_control_risk": 0.107
+      },
+      {
+        "name": "lib34",
+        "version": "3.14.11",
+        "supplier_jurisdiction": "EU",
+        "criticality": "auth",
+        "foreign_control_risk": 0.801
+      },
+      {
+        "name": "lib35",
+        "version": "0.5.11",
+        "supplier_jurisdiction": "BR",
+        "criticality": "network",
+        "foreign_control_risk": 0.961
+      },
+      {
+        "name": "lib36",
+        "version": "2.0.43",
+        "supplier_jurisdiction": "US",
+        "criticality": "ui",
+        "foreign_control_risk": 0.039
+      },
+      {
+        "name": "lib37",
+        "version": "0.3.12",
+        "supplier_jurisdiction": "IN",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.692
+      },
+      {
+        "name": "lib38",
+        "version": "3.16.2",
+        "supplier_jurisdiction": "CA",
+        "criticality": "ui",
+        "foreign_control_risk": 0.194
+      },
+      {
+        "name": "lib39",
+        "version": "5.19.50",
+        "supplier_jurisdiction": "CN",
+        "criticality": "data",
+        "foreign_control_risk": 0.51
+      },
+      {
+        "name": "lib40",
+        "version": "5.5.41",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.981
+      },
+      {
+        "name": "lib41",
+        "version": "3.12.14",
+        "supplier_jurisdiction": "CA",
+        "criticality": "network",
+        "foreign_control_risk": 0.656
+      },
+      {
+        "name": "lib42",
+        "version": "0.14.25",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.092
+      },
+      {
+        "name": "lib43",
+        "version": "0.7.12",
+        "supplier_jurisdiction": "EU",
+        "criticality": "data",
+        "foreign_control_risk": 0.622
+      },
+      {
+        "name": "lib44",
+        "version": "1.5.7",
+        "supplier_jurisdiction": "EU",
+        "criticality": "network",
+        "foreign_control_risk": 0.717
+      },
+      {
+        "name": "lib45",
+        "version": "0.8.10",
+        "supplier_jurisdiction": "EU",
+        "criticality": "auth",
+        "foreign_control_risk": 0.724
+      },
+      {
+        "name": "lib46",
+        "version": "1.1.6",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.029
+      },
+      {
+        "name": "lib47",
+        "version": "1.15.1",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.103
+      },
+      {
+        "name": "lib48",
+        "version": "1.13.16",
+        "supplier_jurisdiction": "CN",
+        "criticality": "network",
+        "foreign_control_risk": 0.819
+      },
+      {
+        "name": "lib49",
+        "version": "2.18.24",
+        "supplier_jurisdiction": "CA",
+        "criticality": "auth",
+        "foreign_control_risk": 0.851
+      },
+      {
+        "name": "lib50",
+        "version": "0.3.12",
+        "supplier_jurisdiction": "SG",
+        "criticality": "ui",
+        "foreign_control_risk": 0.357
+      },
+      {
+        "name": "lib51",
+        "version": "5.7.27",
+        "supplier_jurisdiction": "CA",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.959
+      },
+      {
+        "name": "lib52",
+        "version": "4.12.1",
+        "supplier_jurisdiction": "BR",
+        "criticality": "data",
+        "foreign_control_risk": 0.686
+      },
+      {
+        "name": "lib53",
+        "version": "5.3.5",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.059
+      },
+      {
+        "name": "lib54",
+        "version": "2.9.49",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.811
+      },
+      {
+        "name": "lib55",
+        "version": "2.16.46",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.162
+      },
+      {
+        "name": "lib56",
+        "version": "5.16.46",
+        "supplier_jurisdiction": "EU",
+        "criticality": "network",
+        "foreign_control_risk": 0.565
+      },
+      {
+        "name": "lib57",
+        "version": "5.20.15",
+        "supplier_jurisdiction": "US",
+        "criticality": "ui",
+        "foreign_control_risk": 0.037
+      },
+      {
+        "name": "lib58",
+        "version": "2.17.50",
+        "supplier_jurisdiction": "CN",
+        "criticality": "network",
+        "foreign_control_risk": 0.698
+      },
+      {
+        "name": "lib59",
+        "version": "1.7.24",
+        "supplier_jurisdiction": "CN",
+        "criticality": "other",
+        "foreign_control_risk": 0.274
+      },
+      {
+        "name": "lib60",
+        "version": "5.12.39",
+        "supplier_jurisdiction": "IN",
+        "criticality": "crypto",
+        "foreign_control_risk": 1.0
+      },
+      {
+        "name": "lib61",
+        "version": "3.19.18",
+        "supplier_jurisdiction": "IN",
+        "criticality": "ui",
+        "foreign_control_risk": 0.181
+      },
+      {
+        "name": "lib62",
+        "version": "4.10.3",
+        "supplier_jurisdiction": "US",
+        "criticality": "ui",
+        "foreign_control_risk": 0.06
+      },
+      {
+        "name": "lib63",
+        "version": "1.0.36",
+        "supplier_jurisdiction": "US",
+        "criticality": "network",
+        "foreign_control_risk": 0.095
+      },
+      {
+        "name": "lib64",
+        "version": "0.18.16",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.127
+      },
+      {
+        "name": "lib65",
+        "version": "5.1.42",
+        "supplier_jurisdiction": "SG",
+        "criticality": "auth",
+        "foreign_control_risk": 0.662
+      },
+      {
+        "name": "lib66",
+        "version": "2.13.35",
+        "supplier_jurisdiction": "EU",
+        "criticality": "data",
+        "foreign_control_risk": 0.714
+      },
+      {
+        "name": "lib67",
+        "version": "4.13.25",
+        "supplier_jurisdiction": "IN",
+        "criticality": "network",
+        "foreign_control_risk": 0.653
+      },
+      {
+        "name": "lib68",
+        "version": "0.7.10",
+        "supplier_jurisdiction": "SG",
+        "criticality": "auth",
+        "foreign_control_risk": 0.584
+      },
+      {
+        "name": "lib69",
+        "version": "4.7.3",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.192
+      },
+      {
+        "name": "lib70",
+        "version": "5.2.34",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.13
+      },
+      {
+        "name": "lib71",
+        "version": "2.14.45",
+        "supplier_jurisdiction": "CA",
+        "criticality": "crypto",
+        "foreign_control_risk": 1.0
+      },
+      {
+        "name": "lib72",
+        "version": "2.9.10",
+        "supplier_jurisdiction": "CA",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.881
+      },
+      {
+        "name": "lib73",
+        "version": "1.8.14",
+        "supplier_jurisdiction": "BR",
+        "criticality": "network",
+        "foreign_control_risk": 0.848
+      },
+      {
+        "name": "lib74",
+        "version": "5.7.12",
+        "supplier_jurisdiction": "CA",
+        "criticality": "other",
+        "foreign_control_risk": 0.16
+      },
+      {
+        "name": "lib75",
+        "version": "5.8.4",
+        "supplier_jurisdiction": "CN",
+        "criticality": "data",
+        "foreign_control_risk": 0.532
+      },
+      {
+        "name": "lib76",
+        "version": "0.1.12",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.11
+      },
+      {
+        "name": "lib77",
+        "version": "2.8.38",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.068
+      },
+      {
+        "name": "lib78",
+        "version": "3.18.36",
+        "supplier_jurisdiction": "BR",
+        "criticality": "data",
+        "foreign_control_risk": 0.616
+      },
+      {
+        "name": "lib79",
+        "version": "2.10.28",
+        "supplier_jurisdiction": "EU",
+        "criticality": "other",
+        "foreign_control_risk": 0.295
+      },
+      {
+        "name": "lib80",
+        "version": "5.8.19",
+        "supplier_jurisdiction": "BR",
+        "criticality": "network",
+        "foreign_control_risk": 0.648
+      },
+      {
+        "name": "lib81",
+        "version": "1.5.30",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.105
+      },
+      {
+        "name": "lib82",
+        "version": "0.8.32",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.096
+      },
+      {
+        "name": "lib83",
+        "version": "4.15.29",
+        "supplier_jurisdiction": "EU",
+        "criticality": "data",
+        "foreign_control_risk": 0.602
+      },
+      {
+        "name": "lib84",
+        "version": "1.2.1",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.045
+      },
+      {
+        "name": "lib85",
+        "version": "3.7.41",
+        "supplier_jurisdiction": "CA",
+        "criticality": "auth",
+        "foreign_control_risk": 0.908
+      },
+      {
+        "name": "lib86",
+        "version": "2.1.26",
+        "supplier_jurisdiction": "CN",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.947
+      },
+      {
+        "name": "lib87",
+        "version": "3.15.30",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.084
+      },
+      {
+        "name": "lib88",
+        "version": "4.19.50",
+        "supplier_jurisdiction": "US",
+        "criticality": "network",
+        "foreign_control_risk": 0.027
+      },
+      {
+        "name": "lib89",
+        "version": "1.17.2",
+        "supplier_jurisdiction": "US",
+        "criticality": "data",
+        "foreign_control_risk": 0.096
+      },
+      {
+        "name": "lib90",
+        "version": "5.6.13",
+        "supplier_jurisdiction": "CA",
+        "criticality": "ui",
+        "foreign_control_risk": 0.335
+      },
+      {
+        "name": "lib91",
+        "version": "1.12.35",
+        "supplier_jurisdiction": "EU",
+        "criticality": "auth",
+        "foreign_control_risk": 0.83
+      },
+      {
+        "name": "lib92",
+        "version": "0.17.26",
+        "supplier_jurisdiction": "CA",
+        "criticality": "network",
+        "foreign_control_risk": 0.889
+      },
+      {
+        "name": "lib93",
+        "version": "5.9.50",
+        "supplier_jurisdiction": "CN",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.969
+      },
+      {
+        "name": "lib94",
+        "version": "1.11.2",
+        "supplier_jurisdiction": "BR",
+        "criticality": "other",
+        "foreign_control_risk": 0.158
+      },
+      {
+        "name": "lib95",
+        "version": "1.16.41",
+        "supplier_jurisdiction": "EU",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.981
+      },
+      {
+        "name": "lib96",
+        "version": "2.11.36",
+        "supplier_jurisdiction": "EU",
+        "criticality": "crypto",
+        "foreign_control_risk": 1.0
+      },
+      {
+        "name": "lib97",
+        "version": "5.18.36",
+        "supplier_jurisdiction": "US",
+        "criticality": "other",
+        "foreign_control_risk": 0.017
+      },
+      {
+        "name": "lib98",
+        "version": "1.4.21",
+        "supplier_jurisdiction": "BR",
+        "criticality": "crypto",
+        "foreign_control_risk": 1.0
+      },
+      {
+        "name": "lib99",
+        "version": "3.1.35",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.816
+      },
+      {
+        "name": "lib100",
+        "version": "0.6.31",
+        "supplier_jurisdiction": "EU",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.924
+      },
+      {
+        "name": "lib101",
+        "version": "5.11.33",
+        "supplier_jurisdiction": "SG",
+        "criticality": "auth",
+        "foreign_control_risk": 0.744
+      },
+      {
+        "name": "lib102",
+        "version": "1.2.14",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.032
+      },
+      {
+        "name": "lib103",
+        "version": "5.7.16",
+        "supplier_jurisdiction": "EU",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.812
+      },
+      {
+        "name": "lib104",
+        "version": "1.12.45",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.633
+      },
+      {
+        "name": "lib105",
+        "version": "5.5.2",
+        "supplier_jurisdiction": "CN",
+        "criticality": "network",
+        "foreign_control_risk": 0.657
+      },
+      {
+        "name": "lib106",
+        "version": "5.15.21",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.073
+      },
+      {
+        "name": "lib107",
+        "version": "3.0.7",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.088
+      },
+      {
+        "name": "lib108",
+        "version": "2.2.37",
+        "supplier_jurisdiction": "CN",
+        "criticality": "auth",
+        "foreign_control_risk": 0.742
+      },
+      {
+        "name": "lib109",
+        "version": "2.2.7",
+        "supplier_jurisdiction": "IN",
+        "criticality": "auth",
+        "foreign_control_risk": 0.866
+      },
+      {
+        "name": "lib110",
+        "version": "2.19.1",
+        "supplier_jurisdiction": "US",
+        "criticality": "network",
+        "foreign_control_risk": 0.115
+      },
+      {
+        "name": "lib111",
+        "version": "1.10.21",
+        "supplier_jurisdiction": "BR",
+        "criticality": "auth",
+        "foreign_control_risk": 0.765
+      },
+      {
+        "name": "lib112",
+        "version": "2.14.14",
+        "supplier_jurisdiction": "IN",
+        "criticality": "network",
+        "foreign_control_risk": 0.895
+      },
+      {
+        "name": "lib113",
+        "version": "5.11.34",
+        "supplier_jurisdiction": "US",
+        "criticality": "network",
+        "foreign_control_risk": 0.054
+      },
+      {
+        "name": "lib114",
+        "version": "2.7.41",
+        "supplier_jurisdiction": "CA",
+        "criticality": "auth",
+        "foreign_control_risk": 0.816
+      },
+      {
+        "name": "lib115",
+        "version": "0.14.34",
+        "supplier_jurisdiction": "BR",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.913
+      },
+      {
+        "name": "lib116",
+        "version": "4.6.30",
+        "supplier_jurisdiction": "EU",
+        "criticality": "crypto",
+        "foreign_control_risk": 1.0
+      },
+      {
+        "name": "lib117",
+        "version": "2.4.21",
+        "supplier_jurisdiction": "US",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.085
+      },
+      {
+        "name": "lib118",
+        "version": "3.13.29",
+        "supplier_jurisdiction": "US",
+        "criticality": "auth",
+        "foreign_control_risk": 0.084
+      },
+      {
+        "name": "lib119",
+        "version": "3.8.8",
+        "supplier_jurisdiction": "CN",
+        "criticality": "crypto",
+        "foreign_control_risk": 0.752
+      }
+    ]
+  },
+  "signing": {
+    "key_jurisdiction": "US",
+    "signature": "demo-signature"
+  },
+  "hosting": {
+    "type": "saas",
+    "control_plane_region": "us-east-1",
+    "jurisdiction": "US"
+  }
+}

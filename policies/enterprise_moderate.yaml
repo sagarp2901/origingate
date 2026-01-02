@@ -1,0 +1,17 @@
+name: enterprise_moderate
+description: "Moderate policy: allow but apply compliance fee when foreign-dominant."
+thresholds:
+  tau_min_ocs: 0.60
+  gamma_max_foi: 25.0
+actions:
+  on_allow: ["log_audit", "approve"]
+  on_review: ["log_audit", "manual_review"]
+  on_deny: ["log_audit", "deny"]
+fee:
+  enabled: true
+  rate: 0.10          # 10% base compliance rate
+  usage_field: annual_usage_usd
+  formula: "U * rate * (1 - OCS)"
+review_band:
+  ocs_low: 0.45
+  ocs_high: 0.60

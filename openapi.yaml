@@ -1,0 +1,291 @@
+openapi: 3.0.3
+info:
+  title: OriginGate API
+  version: 0.1.0
+  description: Verify Software Origin Dossiers (SOD), compute origin scores (OCS/FOI), and apply policy-as-code procurement/update decisions.
+servers:
+  - url: http://localhost:8080
+paths:
+  /v1/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+  /v1/openapi.yaml:
+    get:
+      summary: Get OpenAPI spec
+      responses:
+        '200':
+          description: OpenAPI YAML
+  /v1/dossiers/verify:
+    post:
+      summary: Verify dossier structure and integrity bindings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SoftwareOriginDossier'
+      responses:
+        '200':
+          description: Verification result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifyResponse'
+  /v1/origin/score:
+    post:
+      summary: Compute OCS/FOI and explanations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScoreRequest'
+      responses:
+        '200':
+          description: Score response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScoreResponse'
+  /v1/policy/decide:
+    post:
+      summary: Apply YAML policy to OCS/FOI and compute fee/actions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecideRequest'
+      responses:
+        '200':
+          description: Decision
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecisionResponse'
+  /v1/assess:
+    post:
+      summary: Verify + Score + Decide in one call
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssessRequest'
+      responses:
+        '200':
+          description: Assessment decision
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssessResponse'
+  /v1/baselines:
+    post:
+      summary: Register an approved baseline release
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BaselineCreateRequest'
+      responses:
+        '200':
+          description: Baseline created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BaselineCreateResponse'
+  /v1/updates/evaluate:
+    post:
+      summary: Evaluate an update dossier vs baseline and compute drift
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEvaluateRequest'
+      responses:
+        '200':
+          description: Update evaluation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateEvaluateResponse'
+components:
+  schemas:
+    SoftwareOriginDossier:
+      type: object
+      required: [product, artifact, provenance, sbom, signing]
+      properties:
+        product:
+          type: object
+          required: [name, version]
+          properties:
+            name: {type: string}
+            version: {type: string}
+        artifact:
+          type: object
+          required: [digest]
+          properties:
+            digest: {type: string}
+            uri: {type: string}
+        provenance:
+          type: object
+          required: [builder_id, build_region, timestamp, source_repo, commit]
+          properties:
+            builder_id: {type: string}
+            build_region: {type: string}
+            timestamp: {type: string}
+            source_repo: {type: string}
+            commit: {type: string}
+        sbom:
+          type: object
+          required: [format, components]
+          properties:
+            format: {type: string}
+            components:
+              type: array
+              items:
+                type: object
+                required: [name, version, supplier_jurisdiction, criticality, foreign_control_risk]
+                properties:
+                  name: {type: string}
+                  version: {type: string}
+                  supplier_jurisdiction: {type: string}
+                  criticality: {type: string}
+                  foreign_control_risk: {type: number}
+        signing:
+          type: object
+          required: [key_jurisdiction, signature]
+          properties:
+            key_jurisdiction: {type: string}
+            signature: {type: string}
+        hosting:
+          type: object
+          properties:
+            type: {type: string}
+            control_plane_region: {type: string}
+            jurisdiction: {type: string}
+
+    VerifyResponse:
+      type: object
+      properties:
+        ok: {type: boolean}
+        errors:
+          type: array
+          items: {type: string}
+
+    ScoreRequest:
+      type: object
+      required: [dossier]
+      properties:
+        dossier: {$ref: '#/components/schemas/SoftwareOriginDossier'}
+        weights:
+          type: object
+          properties:
+            w_build: {type: number}
+            w_sbom: {type: number}
+            w_signing: {type: number}
+            w_hosting: {type: number}
+        target_jurisdiction:
+          type: string
+          default: US
+
+    ScoreResponse:
+      type: object
+      properties:
+        ocs: {type: number}
+        foi: {type: number}
+        signals:
+          type: object
+        explanations:
+          type: array
+          items: {type: string}
+
+    DecideRequest:
+      type: object
+      required: [ocs, foi, policy_name]
+      properties:
+        ocs: {type: number}
+        foi: {type: number}
+        policy_name: {type: string}
+        context:
+          type: object
+          description: Additional fields like annual_usage_usd, system_criticality, etc.
+
+    DecisionResponse:
+      type: object
+      properties:
+        verdict: {type: string}
+        allow: {type: boolean}
+        fee_usd: {type: number}
+        actions:
+          type: array
+          items: {type: string}
+        reasons:
+          type: array
+          items: {type: string}
+
+    AssessRequest:
+      type: object
+      required: [dossier, policy_name]
+      properties:
+        dossier: {$ref: '#/components/schemas/SoftwareOriginDossier'}
+        policy_name: {type: string}
+        context:
+          type: object
+        target_jurisdiction:
+          type: string
+          default: US
+
+    AssessResponse:
+      allOf:
+        - $ref: '#/components/schemas/DecisionResponse'
+        - type: object
+          properties:
+            ocs: {type: number}
+            foi: {type: number}
+            explanations:
+              type: array
+              items: {type: string}
+
+    BaselineCreateRequest:
+      type: object
+      required: [baseline_id, dossier, policy_name]
+      properties:
+        baseline_id: {type: string}
+        dossier: {$ref: '#/components/schemas/SoftwareOriginDossier'}
+        policy_name: {type: string}
+        target_jurisdiction: {type: string, default: US}
+
+    BaselineCreateResponse:
+      type: object
+      properties:
+        baseline_id: {type: string}
+        ocs0: {type: number}
+        foi0: {type: number}
+
+    UpdateEvaluateRequest:
+      type: object
+      required: [baseline_id, dossier, policy_name]
+      properties:
+        baseline_id: {type: string}
+        dossier: {$ref: '#/components/schemas/SoftwareOriginDossier'}
+        policy_name: {type: string}
+        context:
+          type: object
+        drift_threshold:
+          type: number
+          default: 0.10
+
+    UpdateEvaluateResponse:
+      type: object
+      properties:
+        baseline_id: {type: string}
+        drift: {type: number}
+        reclassify: {type: boolean}
+        decision:
+          $ref: '#/components/schemas/DecisionResponse'
